@@ -7,6 +7,8 @@ import { useState, useEffect } from "react"
 
 import Sidebar from "@/app/components/Sidebar"
 import Header from "@/app/components/Header"
+// import "tw-elements/dist/css/tw-elements.min.css";
+
 
 export default function RootLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)

@@ -1,32 +1,29 @@
 'use client'
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Tab from '@mui/material/Tab';
-import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
+import Link from 'next/link';
 
 export default function MyTickets() {
-  const [value, setValue] = React.useState('1');
+ // const [value, setValue] = React.useState('1');
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   return (
-    <Box sx={{ width: '100%', typography: 'body1' }}>
-      <TabContext value={value}>
-        <Box >
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
-            <Tab label="Buy Ticket" value="1" className='text-black dark:text-white text-2xl' />
-            <Tab label="My Tickets" value="2" className='text-black dark:text-white text-2xl'/>
-            
-          </TabList>
-        </Box>
-        <TabPanel value="1">Buy Tickets </TabPanel>
-        <TabPanel value="2">My Tickets</TabPanel>
+    <div>
+      
        
-      </TabContext>
-    </Box>
+
+            <div className='flex justify-between '>
+            <p className='text-black text-left block dark:text-white text-2xl' >My Tickets</p>
+            <Link
+              href="#"
+              className="inline-flex items-center  justify-center  rounded-md bg-meta-6 py-2 px-10 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xl:px-10"
+            >Buy Now
+            </Link>
+            </div>
+       
+     
+    </div>
   );
 }
