@@ -1,13 +1,45 @@
+'use client'
 import React from 'react';
+import { useEffect } from 'react'
+import {AiFillCaretRight} from 'react-icons/ai'
+const Card = ({ total, title , icon }) => {
+  useEffect(()=>{
+    const init=async()=>{
+      const{Ripple,initTE }=await import ("tw-elements");
+      initTE({Ripple})
+    }
+    init()
+  },[]);
 
-const Card = ({ total, title }) => {
   return (
-    <div className="bg-white rounded-sm border border-stroke shadow-lg  overflow-hidden w-full  mx-auto mb-4 dark:border-strokedark dark:bg-boxdark">
-      <div className="px-4 py-6">
-        <h2 className="text-3xl font-extrabold text-gray-800">{total}</h2>
-        <p className="text-lg font-semibold text-indigo-600 mt-2">{title}</p>
-      </div>
-    </div>
+     (total && title) ?(
+    <div
+    class="block rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-black">
+    <h5
+      class="mb-2 text-4xl font-semibold leading-tight text-neutral-800 dark:text-neutral-50">
+      {total}
+    </h5>
+    <p class="mt-4 text-md text-neutral-600 dark:text-neutral-200">
+      {title}
+    </p>
+    
+  </div>):(
+    <div
+    class="block gap-4  rounded-lg   bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-black">
+    <h5
+      class="mb-2 text-xl font-semibold leading-tight text-neutral-800 dark:text-neutral-50">
+      {title}  <span className='float-right'> {icon && <AiFillCaretRight/>}</span>
+    </h5>
+    
+   
+    
+  </div>
+  
+  )
+ 
+
+
+   
   );
 };
 

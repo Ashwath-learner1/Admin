@@ -1,92 +1,86 @@
-'use client'
-import React,{useState} from 'react'
-import Card from '../components/Card'
-// import Link from 'next/link'
-function MyNominations() {
-  const packageData = [
-    {
-        name: "Segment 1",
-        category: "category 1",
-        sub_category: "sub1",
-        status: "Approved"
-    },
-    {
-        name: "Segment 2",
-        category: "category 2",
-        sub_category: "sub1",
-        status: "pending"
-    },
-    {
-        name: "Segment 3",
-        category: "category 3",
-        sub_category: "sub1",
-        status: "Approved"
-    },
-    {
-        name: "Segment 4",
-        category: "category 4",
-        sub_category: "sub1",
-        status: "Pending"
-    },
-    {
-        name: "Segment 4",
-        category: "category 4",
-        sub_category: "sub1",
-        status: "Pending"
-    },
-    {
-        name: "Segment 4",
-        category: "category 4",
-        sub_category: "sub1",
-        status: "Approved"
-    },
-    {
-        name: "Segment 4",
-        category: "category 4",
-        sub_category: "sub1",
-        status: "Pending"
-    },
-    {
-        name: "Segment 4",
-        category: "category 4",
-        sub_category: `Sub 4`,
-        status: "Approved"
-    },
-    {
-        name: "Segment 4",
-        category: "category 4",
-        sub_category: `Sub 4`,
-        status: "Pending"
-    }
-];
-const itemsPerPage = 4; // Number of items to display per page
-const [currentPage, setCurrentPage] = useState(1);
+// pages/nominations.js
+"use client"
+import React, { useState } from 'react';
+const Nominations = () => {
+   
+    // Sample data for the table
 
-const startIndex = (currentPage - 1) * itemsPerPage;
-const endIndex = startIndex + itemsPerPage;
+    const packageData = [
+        {
+            name: "Segment 1",
+            category: "category 1",
+            sub_category: "sub1",
+            status: "Approved"
+        },
+        {
+            name: "Segment 2",
+            category: "category 2",
+            sub_category: "sub1",
+            status: "pending"
+        },
+        {
+            name: "Segment 3",
+            category: "category 3",
+            sub_category: "sub1",
+            status: "Approved"
+        },
+        {
+            name: "Segment 4",
+            category: "category 4",
+            sub_category: "sub1",
+            status: "Pending"
+        },
+        {
+            name: "Segment 4",
+            category: "category 4",
+            sub_category: "sub1",
+            status: "Pending"
+        },
+        {
+            name: "Segment 4",
+            category: "category 4",
+            sub_category: "sub1",
+            status: "Approved"
+        },
+        {
+            name: "Segment 4",
+            category: "category 4",
+            sub_category: "sub1",
+            status: "Pending"
+        },
+        {
+            name: "Segment 4",
+            category: "category 4",
+            sub_category: `Sub 4`,
+            status: "Approved"
+        },
+        {
+            name: "Segment 4",
+            category: "category 4",
+            sub_category: `Sub 4`,
+            status: "Pending"
+        }
+    ];
+    const itemsPerPage = 4; // Number of items to display per page
+    const [currentPage, setCurrentPage] = useState(1);
 
-// Filter the data to display only the items for the current page
-const currentPackageData = packageData.slice(startIndex, endIndex);
-const totalPages = Math.ceil(packageData.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
 
-const goToPage = (page) => {
-    if (page >= 1 && page <= totalPages) {
-        setCurrentPage(page);
-    }
-};
-  return (
-    <div>
-              {/* <h1 className="text-2xl md:ml-9 md:text-3xl dark:text-white text-black font-bold mb-2 md:mb-4">My Nominations</h1> Adjusted text size for mobile */}
+    // Filter the data to display only the items for the current page
+    const currentPackageData = packageData.slice(startIndex, endIndex);
+    const totalPages = Math.ceil(packageData.length / itemsPerPage);
 
-        <div className="grid grid-cols-1 gap-4 md:ml-9 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
-
-       <Card total={'0'} title="Applied Nominations" />
-       <Card total={'0'} title="Pending Nominations" />
-       </div>
-
-       <div className="container mx-auto p-4 md:p-8"> {/* Adjusted padding for mobile */}
-            {/* <p className="mb-2 md:mb-4">Here you can see your applied and pending Nominations</p> Adjusted margin for mobile */}
-            <div className="max-w-full overflow-x-auto mt-4">
+    const goToPage = (page) => {
+        if (page >= 1 && page <= totalPages) {
+            setCurrentPage(page);
+        }
+    };
+    return (
+        <div className="container mx-auto p-4 md:p-8"> {/* Adjusted padding for mobile */}
+            <h1 className="text-2xl md:text-3xl dark:text-white text-black font-bold mb-2 md:mb-4">My Nominations</h1> {/* Adjusted text size for mobile */}
+            <p className="mb-2 md:mb-4">Here you can see your applied and pending Nominations</p> {/* Adjusted margin for mobile */}
+            <div className="max-w-full overflow-x-auto mt-16">
                 <table className="w-full table-auto">
                     <thead>
                         <tr className="bg-graydark text-left dark:bg-meta-4">
@@ -180,8 +174,7 @@ const goToPage = (page) => {
            
 
         </div>
-    </div>
-  )
-}
+    );
+};
 
-export default MyNominations
+export default Nominations;

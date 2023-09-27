@@ -1,7 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import Layout from './components/Layout'
 export default function Home() {
   return (
+    <Layout>
     <main className="flex min-h-screen flex-col  justify-between p-6">
     <div className='flex justify-start gap-6 flex-col text-black dark:text-white'>
       <p className='text-[40px] font-semibold tracking-wide'>ARE YOU <br/><br/>READY?</p>
@@ -31,5 +33,6 @@ export default function Home() {
       </div>
     </div>
     </main>
+    </Layout>
   )
 }

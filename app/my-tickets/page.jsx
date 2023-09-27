@@ -1,6 +1,7 @@
 'use client'
 import * as React from 'react';
 import Link from 'next/link';
+import Layout from '../components/Layout';
 
 export default function MyTickets() {
  // const [value, setValue] = React.useState('1');
@@ -10,6 +11,7 @@ export default function MyTickets() {
   };
 
   return (
+    <Layout>
     <div>
       
        
@@ -25,5 +27,6 @@ export default function MyTickets() {
        
      
     </div>
+    </Layout>
   );
 }
