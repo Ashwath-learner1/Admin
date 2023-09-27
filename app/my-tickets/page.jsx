@@ -7,59 +7,36 @@ export default function MyTickets() {
   // const [value, setValue] = React.useState('1');
   const packageData = [
     {
-      name: "Segment 1",
-      category: "category 1",
-      sub_category: "sub1",
-      status: "Approved"
+      name: "1",
+      category: "2384023",
+      sub_category: "03/12/2022",
+      status: "$30,000 "
     },
     {
-      name: "Segment 2",
-      category: "category 2",
-      sub_category: "sub1",
-      status: "Pending"
+      name: "2",
+      category: "2384023",
+      sub_category: "03/12/2022",
+      status: "$30,000"
     },
     {
-      name: "Segment 3",
-      category: "category 3",
-      sub_category: "sub1",
-      status: "Approved"
+      name: "3",
+      category: "2384023",
+      sub_category: "03/12/2022",
+      status: "$30,000"
     },
     {
-      name: "Segment 4",
-      category: "category 4",
-      sub_category: "sub1",
-      status: "Pending"
+      name: "4",
+      category: "83948348",
+      sub_category: "03/12/2022",
+      status: "$30,000"
     },
     {
-      name: "Segment 4",
-      category: "category 4",
-      sub_category: "sub1",
-      status: "Pending"
+      name: "4",
+      category: "83948348",
+      sub_category: "03/12/2022",
+      status: "$30,000"
     },
-    {
-      name: "Segment 4",
-      category: "category 4",
-      sub_category: "sub1",
-      status: "Approved"
-    },
-    {
-      name: "Segment 4",
-      category: "category 4",
-      sub_category: "sub1",
-      status: "Pending"
-    },
-    {
-      name: "Segment 4",
-      category: "category 4",
-      sub_category: `Sub 4`,
-      status: "Approved"
-    },
-    {
-      name: "Segment 4",
-      category: "category 4",
-      sub_category: `Sub 4`,
-      status: "Pending"
-    }
+    
   ];
   const itemsPerPage = 4; // Number of items to display per page
   const [currentPage, setCurrentPage] = useState(1);
@@ -88,7 +65,7 @@ export default function MyTickets() {
 
 
         <div className='flex justify-between '>
-          <p className='text-black text-left ml-7 md:ml-7 block dark:text-white text-2xl' >My Tickets</p>
+          <p className='text-black text-left ml-7 md:ml-7 block dark:text-white text-4xl font-bold' >My Tickets</p>
           <Link
             href="#"
             className="inline-flex items-center  justify-center  rounded-md bg-meta-6 py-2 px-10 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xl:px-10"
@@ -102,19 +79,19 @@ export default function MyTickets() {
               <thead>
                 <tr className="bg-graydark text-left dark:bg-meta-4">
                   <th className="w-1/4 md:min-w-[220px] py-2 md:py-4 px-2 md:px-4 font-bold text-white dark:text-white xl:pl-11">
-                    Segment
+                    S.No
                   </th>
-                  <th className="w-1/4 md:min-w-[150px] py-2 md:py-4 px-2 md:px-4 font-bold text-white dark:text-white">
-                    Category
+                  <th className="w-1/4 md:min-w-[150px] py-2 md:py-4 px-2 md:px-2 font-bold text-white dark:text-white">
+                    Booking ID
                   </th>
-                  <th className="w-1/4 md:min-w-[150px] py-2 md:py-4 px-0 md:px-0 font-bold text-white dark:text-white">
-                    Sub-Category
+                  <th className="w-1/4 md:min-w-[150px] py-2 md:py-4 px-2 md:px-5 font-bold text-white dark:text-white">
+                    Booking Date
                   </th>
-                  <th className="w-1/4 py-2 md:py-4 px-2 md:px-4 font-bold text-white md:ml-2 dark:text-white">
+                  <th className="w-1/4 py-2 md:py-4 px-2 md:px-6 font-bold text-white md:ml-2 dark:text-white">
+                    Amount
+                  </th>
+                  <th className="w-1/4 py-2 md:py-4 px-5 md:px-5 font-bold text-white dark:text-white">
                     View
-                  </th>
-                  <th className="w-1/4 py-2 md:py-4 px-2 md:px-4 font-bold text-white dark:text-white">
-                    Status
                   </th>
                 </tr>
               </thead>
@@ -136,12 +113,12 @@ export default function MyTickets() {
                         {packageItem.sub_category}
                       </p>
                     </td>
-                    <td className="py-2 md:py-3 px-2 md:px-2"> {/* Adjusted padding for mobile */}
-                      <button className="bg-primary hover:bg-cyan hover:text-black text-white font-bold py-1 md:py-2 px-2 md:px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-                        View
-                      </button>
+                    <td className="py-2 md:py-3 px-2 md:px-6 dark:border-strokedark">
+                      <p className="text-black dark:text-white ">
+                        {packageItem.status}
+                      </p>
                     </td>
-                    <td className="py-2 md:py-3 px-2 md:px-3">
+                    {/* <td className="py-2 md:py-3 px-2 md:px-3">
                       <div className="flex items-center">
                         <p
                           className={`inline-flex rounded-full bg-opacity-10 py-1 px-2 text-sm font-medium ${packageItem.status === "Approved"
@@ -154,6 +131,11 @@ export default function MyTickets() {
                           {packageItem.status}
                         </p>
                       </div>
+                    </td> */}
+                    <td className="py-2 md:py-3 px-2 md:px-2"> {/* Adjusted padding for mobile */}
+                      <button className="bg-primary hover:bg-cyan hover:text-black text-white font-bold py-1 md:py-2 px-2 md:px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        View
+                      </button>
                     </td>
                   </tr>
                 ))}
