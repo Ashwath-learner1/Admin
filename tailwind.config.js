@@ -215,6 +215,9 @@ module.exports = {
       },
       backgroundImage: {
         video: "url('../images/video/video.png')",
+        gradient101:'linear-gradient(to right, #ff7e5f, #feb47b)',
+        ticketwed:"url('../public/images/ticketwedimage.jpg')"
+
       },
       content: {
         "icon-copy": 'url("../images/icon/icon-copy-alt.svg")',
@@ -258,5 +261,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tw-elements/dist/plugin.cjs")],
+  plugins: [require("tw-elements/dist/plugin.cjs")]
 };

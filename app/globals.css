@@ -182,3 +182,11 @@ span.flatpickr-weekday,
   
   margin-top: 45px;
 }
+
+/* .short_activeline {
+  position: relative;
+  border-bottom-width: 2px; /
+  left: 50%;
+  right:50%;
+  transform: translateX(-50%);
+} */

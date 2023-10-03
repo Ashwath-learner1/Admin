@@ -1,8 +1,11 @@
+import Breadcrumb from '@/app/components/BreadCrumbs/BreadCrumbs';
 import React from 'react';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 
 const SuccessPage = () => {
   return (
+    <>
+    <Breadcrumb pageNames={['my-exhibit-requests','exhibitor-success']}/>
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <div className="max-w-md mx-auto p-6 bg-white  text-center overflow-hidden">
         <h1 className="text-3xl font-bold text-black mb-4">
@@ -22,6 +25,7 @@ const SuccessPage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

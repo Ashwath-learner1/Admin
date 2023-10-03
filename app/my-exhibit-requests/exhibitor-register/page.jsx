@@ -1,7 +1,10 @@
+import Breadcrumb from '@/app/components/BreadCrumbs/BreadCrumbs';
 import React from 'react';
 
 const RegisterPage = () => {
   return (
+    <>
+    <Breadcrumb pageNames={['my-exhibit-requests','exhibitor-register']}/>
     <div className="bg-gray-100 mt-10 dark:bg-gray-800 flex justify-center items-center">
       <div className="w-full md:w-4/5 lg:w-full xl:w-4/5 rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
         <div className="border-b border-stroke py-4 px-6.5 dark:border-strokedark">
@@ -84,7 +87,7 @@ const RegisterPage = () => {
         </form>
       </div>
     </div>
-
+    </>
   );
 };
 

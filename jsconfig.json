@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "paths": {
-      "@/*": ["./*"]
-    }
+      "@/*": ["./*"],
+      "tw-elements/dist/plugin.cjs": ["./tw-elements.d.ts"]
+    },
+    "moduleResolution": "node"
   }
+ 
 }

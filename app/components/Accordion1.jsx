@@ -15,7 +15,7 @@ const Accordion1 = ({ title, content }) => {
   return (
     <div className="bg-white shadow-md border rounded-lg mb-4 dark:border-neutral-600 border-neutral-200 overflow-hidden dark:bg-black">
       <div
-        className="flex justify-between cursor-pointer   p-4"
+        className="flex md:justify-between md:gap-0 justify-between cursor-pointer   p-3"
         onClick={toggleAccordion}
       >
         <h2 className="text-lg font-semibold dark:text-primary">{title}</h2>

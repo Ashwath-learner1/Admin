@@ -1,30 +1,30 @@
 "use client"
 import "../globals.css"
-// import "./data-tables-css.css"
-// import "./satoshi.css"
+
 import { useState, useEffect } from "react"
-//import Loader from "@/components/common/Loader"
+import Loader from "@/app/components/Loader"
 
 import Sidebar from "@/app/components/Sidebar"
 import Header from "@/app/components/Header"
-// import "tw-elements/dist/css/tw-elements.min.css";
+
 
 
 export default function RootLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [loading, setLoading] = useState(true)
 
-  //const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 1000)
+  }, [])
 
-  // useEffect(() => {
-  //   setTimeout(() => setLoading(false), 1000)
-  // }, [])
+  
 
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}>
         <div className="dark:bg-boxdark-2 dark:text-bodydark">
-           
-            <div className="flex h-screen overflow-hidden">
+          {loading?(<Loader />) :
+            (<div className="flex h-screen overflow-hidden">
               {/* <!-- ===== Sidebar Start ===== --> */}
               <Sidebar
                 sidebarOpen={sidebarOpen}
@@ -51,7 +51,7 @@ export default function RootLayout({ children }) {
               </div>
               {/* <!-- ===== Content Area End ===== --> */}
             </div>
-          
+            )}
         </div>
       </body>
     </html>
